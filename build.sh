@@ -1,17 +1,5 @@
-top = open('templates/top.html').read()
-content = open('content/index.html').read()
-bottom = open('templates/bottom.html').read()
+cat templates/top.html content/index.html templates/bottom.html > docs/index.html
 
-indexpage = top + content + bottom
+cat templates/top.html content/resume.html templates/bottom.html > docs/resume.html
 
-top = open('templates/top.html').read()
-content = open('content/resume.html').read()
-bottom = open('templates/bottom.html').read()
-
-resume = top + content + bottom
-
-top = open('templates/top.html').read()
-content = open('content/contact.html').read()
-bottom = open('templates/bottom.html').read()
-
-contact = top + content + bottom
+cat templates/top.html content/contact.html templates/bottom.html > docs/contact.html
