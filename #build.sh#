@@ -1,8 +1,6 @@
-# Index
+<!--Index-->
 cat templates/top.html content/index.html templates/bottom.html > docs/index.html
-
-# Resume
+<!--Resume-->
 cat templates/top.html content/resume.html templates/bottom.html > docs/resume.html
-
-# Contact
+<!--Contact-->
 cat templates/top.html content/contact.html templates/bottom.html > docs/contact.html
