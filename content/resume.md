@@ -1,8 +1,9 @@
-            <div class="col-sm-8 rightpanel">
+title: Resume
+author: Cindy Dovinh
+
+<div class="col-sm-8 rightpanel">
               <!-- Right Column -->
-
-
-      <div>
+      <div>   
         <h1>Resume</h1>
         <h2><i class="fa fa-suitcase fa-fw w3-margin-right"></i>Work Experience</h2>
         <div>

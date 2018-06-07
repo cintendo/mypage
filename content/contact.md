@@ -1,3 +1,5 @@
+title:   Contact Info
+author:  Cindy Dovinh
 
     <div class="col-sm-8 rightpanel">
               <!-- Right Column -->

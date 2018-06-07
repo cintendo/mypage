@@ -1,51 +1,71 @@
-pages = [
-    {
-        'filename': 'content/index.html',
-        'title': 'index',
-    },
-    {
-        'filename': 'content/resume.html',
-        'title': 'resume',
-    },
-    {
-        'filename': 'content/contact.html',
-        'title': 'contact',
-    },
-]
+
+import glob
+import os
+from jinja2 import Template
+import markdown
+import json
+
+
+pages = []
+
+all_html_pages = []
+all_html_pages = glob.glob("content/*.md")
+
+def createjson():
+    data = json.dumps(pages)
+    open('pages.json', "w+").write(data)
+
+
 
 def main():
-    template = open('templates/base.html').read()
+
+    template_html = open('templates/base.html').read()
+    template = Template(template_html)
+    pages_all = json.load(open('pages.json'))
+    for page in all_html_pages:
+
+        #create dictionary for each page with key 'filename'
+        page_defined = {}
+
+        pages.append(page_defined)
+        # page_defined.update({'filename': str(page)})
+
+        #update dictionary with 'title' using markdown
+        content = open(page).read()
+        md = markdown.Markdown(extensions=["markdown.extensions.meta"])
+        html = md.convert(content)
+        title = md.Meta["title"][0]
+        page_defined.update({'title': str(title)})
 
 
-    for page in pages:
-        content = open(page['filename']).read()
-        full_page_contents = template.replace('{{content}}', content)
-        full_page = str('docs/'+ page['title'] + '.html')
-        open(full_page, 'w+').write(full_page_contents)
+    #all_html_pages[page].append(str(title))
+
+        page_name = os.path.basename(page)
+        name_only, extension = os.path.splitext(page_name)
+        full_page = str('docs/'+ name_only + '.html')
+        full_pagefile = str(name_only + '.html')
+        page_defined.update({'filename': full_pagefile})
+
+        html_results = template.render(
+            content = content,
+            pages = pages_all,
+        )
+
+
+        open(full_page, 'w+').write(html_results)
+
+    # print(pages)
+
+        # print(title, "by", author)
+        # print(html)
+
+    # index_html = open("content/index.html").read()
+    # template_html = open("templates/base.html").read()
 
 
 
-main()
-
-#
-#
-# # Read in index HTML code
-# content = open('content/index.html').read()
-#
-# # Combine template HTML code with index HTML code
-# index_html = top_template + content + bottom_template
-# open('index.html', 'w+').write(index_html)
-#
-# # Rinse and repeat, but with resume HTML code
-# content = open('content/resume.html').read()
-# resume_html = top_template + content + bottom_template
-# open('resume.html', 'w+').write(resume_html)
-#
-# # And again, this time with contact HTML code
-# content = open('content/contact.html').read()
-# contact_html = top_template + content + bottom_template
-# open('contact.html', 'w+').write(contact_html)
-#
+# #
 #
 if __name__ == '__main__':
     main()
+    createjson()
