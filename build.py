@@ -15,8 +15,6 @@ def createjson():
     data = json.dumps(pages)
     open('pages.json', "w+").write(data)
 
-
-
 def main():
 
     template_html = open('templates/base.html').read()
@@ -47,7 +45,7 @@ def main():
         page_defined.update({'filename': full_pagefile})
 
         html_results = template.render(
-            content = content,
+            content = html,
             pages = pages_all,
         )
 

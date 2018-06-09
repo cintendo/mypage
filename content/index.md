@@ -1,43 +1,45 @@
 title: About Me
 author: Cindy Dovinh
 
-    <div class="col-sm-8 rightpanel">
-              <!-- Right Column -->
+<div class="col-sm-8 rightpanel">
+            <!-- Right Column -->
+  <div>
+
     <div>
+      <h1>Biography</h1>
 
-      <div>
-        <h1>Biography</h1>
-
-        <p>A little about who I am and why.</p>
+      <p>A little about who I am and why.</p>
 
 
-        <div class="personalbio">
-            <div class="row">
-                <div class="col">
+      <div class="personalbio">
+          <div class="row">
+              <div class="col">
 
-               </div>
-            </div>
-            <p>
-            <b>Hometown:</b> Seattle, WA
-            <br>
-            <b>Current City:</b> Oakland, CA
-            <br>
-            <b>Current Occupation: </b>Hotel Sales & Meeting Planning
-            <br>
-            <br>
-            After 13 years in the hospitality industry, it's time to further explore my interest in coding.
-            <br>
-            I have 4 siblings and I'm the middle child.  We are named alphabetically:
+             </div>
+          </div>
+          <p>
+          <b>Hometown:</b> Seattle, WA
+          <br>
+          <b>Current City:</b> Oakland, CA
+          <br>
+          <b>Current Occupation: </b>Hotel Sales & Meeting Planning
+          <br>
+          <br>
+          After 13 years in the hospitality industry, it's time to further explore my interest in coding.
+          <br>
+          I have 4 siblings and I'm the middle child.  We are named alphabetically:
+<!--
+            *Amie
+            *Betty
+            *Cindy
+            *Daniel
+            *Emma
 
-              *Amie
-              *Betty
-              *Cindy
-              *Daniel
-              *Emma 
-
-            Thanks Dad!
-            <br>
-            I am left-handed.
+          Thanks Dad!
+          <br>
+          I am left-handed. -->
 
         </div>
     </div>
+  </div>
+</div>
