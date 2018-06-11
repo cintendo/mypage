@@ -28,16 +28,20 @@ author: Cindy Dovinh
           After 13 years in the hospitality industry, it's time to further explore my interest in coding.
           <br>
           I have 4 siblings and I'm the middle child.  We are named alphabetically:
-<!--
-            *Amie
-            *Betty
-            *Cindy
-            *Daniel
-            *Emma
 
-          Thanks Dad!
+            Amie
+            Betty
+            Cindy
+            Daniel
+            Emma
+
+          _Thanks Dad!_
           <br>
-          I am left-handed. -->
+          I am left-handed.
+
+          I enjoy shooting pool.
+
+          I am a Harry Potter fan.
 
         </div>
     </div>

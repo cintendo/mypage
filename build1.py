@@ -10,29 +10,29 @@ all_html_pages = []
 all_html_pages = glob.glob("content/*.md")
 #
 #
-def main():
-
-    template_html = open('templates/base.html').read()
-    template = Template(template_html)
-    # pages_all = json.load(open('pages.json'))
+def generate_docs():
     for page in all_html_pages:
-        # generate_docs()
-        #update dictionary with 'title' using markdown
         content = open(page).read()
         md = markdown.Markdown(extensions=["markdown.extensions.meta"])
         html = md.convert(content)
-        title = md.Meta["title"][0]
-
-    # #to generate html pages from content files
+        title = md.Meta[" title"][0]
         page_name = os.path.basename(page)
         name_only, extension = os.path.splitext(page_name)
         full_page = str('docs/'+ name_only + '.html')
         full_pagefile = str(name_only + '.html')
-
         pages.append(full_pagefile)
+    return html, title
+#
 
-        # page_defined.update({'filename': full_pagefile})
+def main():
 
+    template_html = open('templates/base.html').read()
+    template = Template(template_html)
+
+    # pages_all = json.load(open('pages.json'))
+    generate_docs()
+
+    for page in all_html_pages: 
         html_results = template.render(
             content = html,
             title = title,
@@ -41,6 +41,13 @@ def main():
         )
 
         open(str('docs/'+ name_only + '.html'), 'w+').write(html_results)
+
+
+        print(pages)
+        # print(full_page)
+        # print(full_pagefile)
+        # print(all_html_pages)
+
 
     # print(pages)
 
